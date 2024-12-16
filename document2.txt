@@ -1,2 +1,5 @@
 Samsung
 oppo
+Realeme
+oppo 
+LG
