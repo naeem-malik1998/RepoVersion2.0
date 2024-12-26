@@ -1,30 +1,100 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>This is sample website</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Window</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-    body{
-        background-color: Black;
-      color: white;}
-    h1{
-    
-      font-size: 30px;
-    }
-     p{
-    
-      font-size: 16px;
-    }
-  </style>
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+}
+    </style>
 </head>
 <body>
-  <h1>Hellow this is h1 content</h1>
-  <p>
-    On the Insert tab, the galleries include items that are designed to coordinate with the overall look of your document. You can use these galleries to insert tables, headers, footers, lists, cover pages, and other document building blocks. When you create pictures, charts, or diagrams, they also coordinate with your current document look.
-You can easily change the formatting of selected text in the document text by choosing a look for the selected text from the Quick Styles gallery on the Home tab. You can also format text directly by using the other controls on the Home tab. Most controls offer a choice of using the look from the current theme or using a format that you specify directly.
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="message"></p>
+    </div>
 
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-  </p>
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Sample credentials
+    const sampleUsername = "user123";
+    const samplePassword = "pass123";
+
+    if (username === sampleUsername && password === samplePassword) {
+        document.getElementById('message').textContent = "Login successful!";
+        document.getElementById('message').style.color = "green";
+    } else {
+        document.getElementById('message').textContent = "Invalid username or password";
+        document.getElementById('message').style.color = "red";
+    }
+});
+  </script>
 </body>
-
 </html>
